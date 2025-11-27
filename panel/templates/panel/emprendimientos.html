@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1 class="mb-4 text-center">Lista de Emprendimientos</h1>
+<div class="row">
+    {% for e in emprendimientos %}
+    <div class="col-md-4">
+        <div class="card shadow-sm mb-4">
+            <div class="card-body">
+                <h5 class="card-title">{{ e.nombre }}</h5>
+                <p class="card-text">{{ e.descripcion }}</p>
+                <p><strong>Ubicación:</strong> {{ e.lugar }}</p>
+                <p><strong>Dueño:</strong> {{ e.dueño }}</p>
+            </div>
+        </div>
+    </div>
+    {% empty %}
+    <p class="text-center">No hay emprendimientos registrados aún.</p>
+    {% endfor %}
+</div>
+{% endblock %}
