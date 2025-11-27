@@ -14,9 +14,13 @@ SECRET_KEY = 'django-insecure--hgh^2u*t4$m-ny-yc@7not8o%^9z=i&=lk*&kiw26t9q@mvf6
 # DEBUG debe ser False en producción (Heroku)
 DEBUG = os.environ.get("DEBUG", "False") == "True"
 
-ALLOWED_HOSTS = ['tusitio.herokuapp.com', 'localhost']
-# También puedes permitir todos temporalmente:
-# ALLOWED_HOSTS = ["*"]
+# Para desarrollo y producción
+ALLOWED_HOSTS = [
+    'panelheroku-980ba891e85e.herokuapp.com',
+    '.herokuapp.com',  # Incluye todos los subdominios de Heroku
+    'localhost',
+    '127.0.0.1'
+]
 
 # Application definition
 INSTALLED_APPS = [
